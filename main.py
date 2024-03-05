@@ -48,3 +48,14 @@ data.plot(ax=ax.flatten()[:13], kind='box', subplots=True, sharex=False, sharey=
 fig.tight_layout()
 plt.show()
 
+#Question 6
+dataset = pd.read_csv("heart.csv")
+data = dataset.iloc[:, 0:-1]
+labels = dataset.iloc[:, -1]
+fig, ax = plt.subplots(ncols=13, nrows=13, figsize=(30, 30))
+
+pd.plotting.scatter_matrix(data, ax=ax.flatten().reshape(13, 13))
+
+fig.tight_layout()
+plt.show()
+
